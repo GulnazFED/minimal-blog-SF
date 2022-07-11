@@ -105,6 +105,7 @@ p {
 
 .navBurger {
     justify-content: end;
+    align-self: center;
 }
 
 .input {
