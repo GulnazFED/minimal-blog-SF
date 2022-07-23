@@ -5,6 +5,14 @@
 * Browsers: last 4 version
 */
 
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 body {
     background-color: black;
@@ -74,13 +82,13 @@ h1 {
 .product {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    -ms-grid-rows: 467px;
-    grid-template-rows: 467px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
     padding-left: 127px;
     padding-right: 93px;
-    height: 467px;
+    height: auto;
+    width: auto;
 }
 
 .product>*:nth-child(1) {
@@ -197,10 +205,11 @@ h1 {
     gap: 19px;
 }
 
-.imgMain {
+
+/* .imgMain {
     width: 476px;
     height: 323px;
-}
+} */
 
 .imgAside {
     display: -webkit-box;
@@ -211,7 +220,6 @@ h1 {
     align-items: center;
     -webkit-box-pack: right;
     -ms-flex-pack: right;
-    justify-content: right;
 }
 
 .cupCoffee {
@@ -267,7 +275,7 @@ h1 {
 
 .imgBox {
     width: 297px;
-    height: 382px;
+    height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -276,7 +284,8 @@ h1 {
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-pack: distribute;
-    justify-content: space-around;
+    -webkit-box-pack: start;
+    justify-content: start;
 }
 
 .boxLarge {
@@ -549,3 +558,70 @@ h1 {
 }
 
 @media screen and (max-width: 1280px) {}
+
+@media all and (max-width: 600px) {
+    .product {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    }
+    .product>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    .imgBoxL,
+    .imgBoxLarge,
+    .imgAside {
+        display: none;
+    }
+    .box1 {
+        width: auto;
+    }
+    .artikles {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -ms-grid-rows: 3fr;
+        grid-template-rows: 3fr;
+        width: auto;
+        padding: 43px 93px 0 93px;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+    .artikles>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    .imgBox,
+    .box1 {
+        margin: 0 auto;
+    }
+    .page2 {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -ms-grid-rows: 2fr;
+        grid-template-rows: 2fr;
+    }
+    .page2>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    .boxLarge {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .boxLarge>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+}
